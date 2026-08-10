@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64">
+  <defs>
+    <radialGradient id="pot" cx="50%" cy="38%" r="60%">
+      <stop offset="0" stop-color="#e8a070"/>
+      <stop offset="0.55" stop-color="#c2633a"/>
+      <stop offset="1" stop-color="#7a2f15"/>
+    </radialGradient>
+  </defs>
+  <!-- terracotta pot icon -->
+  <g transform="translate(32,32)">
+    <ellipse cx="0" cy="-14" rx="13" ry="3" fill="#8a3a1c"/>
+    <path d="M -13 -14 Q -15 -2 -11 11 Q -8 18 0 18 Q 8 18 11 11 Q 15 -2 13 -14 Z" fill="url(#pot)"/>
+    <ellipse cx="0" cy="-12" rx="11" ry="2" fill="#3a1a0c" opacity="0.55"/>
+    <path d="M -10 -3 Q -7 -4 -4 -3" stroke="#3a1a0c" stroke-width="0.8" fill="none" opacity="0.4"/>
+    <path d="M 4 -3 Q 7 -4 10 -3" stroke="#3a1a0c" stroke-width="0.8" fill="none" opacity="0.4"/>
+  </g>
+  <!-- wordmark -->
+  <g transform="translate(64,0)">
+    <text x="0" y="28" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="600" letter-spacing="5" fill="#1a1410">TERRACOTTA</text>
+    <text x="1" y="46" font-family="Georgia,serif" font-size="7.5" letter-spacing="3.4" fill="#b94a2a">RESTAURANT &#183; FARIDPUR</text>
+  </g>
+</svg>

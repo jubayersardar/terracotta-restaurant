@@ -1,0 +1,246 @@
+/* ============================================================
+   TERRACOTTA RESTAURANT FARIDPUR — v4
+   Pixel-perfect hero: teal painted bg + bowl on right + 3-line title
+   ============================================================ */
+
+:root{
+  --green-deep:#1f3329;
+  --green:#2a4438;
+  --green-2:#3a5645;
+  --clay:#b94a2a;
+  --clay-dark:#8a3219;
+  --clay-light:#d96a44;
+  --gold:#d4a857;
+  --gold-2:#c89a48;
+  --gold-3:#a07c34;
+  --cream:#fdf9f1;
+  --cream-2:#f5eddc;
+  --cream-3:#ece0c5;
+  --ink:#1a1410;
+  --ink-soft:#4a3c2e;
+  --ink-2:#3a2a1c;
+  --line:rgba(26,20,16,.10);
+  --max:1280px;
+  --serif:'Noto Serif Bengali','Cormorant Garamond',Georgia,serif;
+  --serif-en:'Cormorant Garamond',Georgia,serif;
+  --sans:'Hind Siliguri','Segoe UI',system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit;text-decoration:none;transition:all .25s ease}
+button{font-family:inherit;cursor:pointer;border:0;background:transparent}
+.container{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+.dark{color:var(--ink)}
+.dark-on-cream{color:var(--cream-2)}
+.hl{color:var(--gold);font-style:italic;font-family:var(--serif)}
+
+/* ════════ TOP STRIP ════════ */
+.topstrip{background:var(--green-deep);color:#e8d8b8;font-size:12.5px;letter-spacing:.4px;padding:10px 0;overflow:hidden}
+.topstrip-inner{max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;justify-content:center;align-items:center;gap:14px;white-space:nowrap}
+.topstrip .ts-sep{color:var(--gold);font-weight:700}
+.topstrip .ts-link{color:var(--gold);font-weight:500;transition:color .25s}
+.topstrip .ts-link:hover{color:#e3b667}
+
+/* ════════ HEADER ════════ */
+#siteNav{position:sticky;top:0;z-index:90;background:#fff;padding:14px 0;box-shadow:0 1px 0 var(--line)}
+.nav-wrap{max-width:var(--max);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.brand-mark{width:54px;height:54px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.brand-text{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:var(--serif-en);font-size:22px;font-weight:600;letter-spacing:5px;color:var(--ink);font-feature-settings:'smcp'}
+.brand-sub{font-family:var(--serif-en);font-size:9px;letter-spacing:3.4px;color:var(--clay);margin-top:4px;font-weight:500}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{color:var(--ink);font-size:15px;letter-spacing:.3px;font-weight:500;position:relative;padding:6px 0;font-family:var(--sans)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--clay);transition:width .25s ease}
+.nav-links a:hover{color:var(--clay)}
+.nav-links a:hover::after{width:100%}
+.btn-reserve{background:var(--clay);color:#fff;padding:12px 24px;border-radius:0;font-size:14px;font-weight:500;letter-spacing:.3px;transition:all .25s}
+.btn-reserve:hover{background:var(--clay-dark);color:#fff}
+
+@media (max-width:880px){
+  .nav-links{display:none}
+}
+
+/* ════════ HERO — pixel-perfect from screenshot ════════ */
+.hero{
+  position:relative;
+  min-height:88vh;min-height:88svh;
+  overflow:hidden;
+  color:#fff;
+  background:#3f5a52;
+}
+/* The teal painted background — multi-layer gradient to mimic brush strokes */
+.hero-paint{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 90% 70% at 25% 25%, rgba(120,170,160,.35) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 60% at 75% 70%, rgba(30,55,50,.55) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 60% 15%, rgba(80,130,120,.4) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 15% 85%, rgba(50,90,85,.45) 0%, transparent 55%),
+    linear-gradient(135deg, #5a7d72 0%, #4a6a62 30%, #3a584f 65%, #2e4a42 100%);
+}
+/* Add subtle texture using repeating gradients */
+.hero-paint::before{
+  content:"";position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(45deg, transparent 0, transparent 80px, rgba(255,255,255,.02) 80px, rgba(255,255,255,.02) 82px),
+    repeating-linear-gradient(135deg, transparent 0, transparent 120px, rgba(0,0,0,.03) 120px, rgba(0,0,0,.03) 122px);
+  mix-blend-mode:overlay;opacity:.6;
+}
+/* The pasta bowl image sits on the right side */
+.hero-plate{position:absolute;right:-4%;bottom:0;top:0;width:50%;z-index:1;pointer-events:none;display:flex;align-items:flex-end;justify-content:center}
+.hero-plate img{width:100%;height:auto;max-height:95%;object-fit:contain;object-position:bottom right}
+/* Subtle dark gradient on left so text stays readable */
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,rgba(30,50,45,.5) 0%,rgba(30,50,45,.18) 40%,rgba(30,50,45,0) 60%);pointer-events:none}
+
+.hero-inner{position:relative;z-index:3;max-width:var(--max);margin:0 auto;padding:0 32px;width:100%;height:100%;min-height:88vh;min-height:88svh;display:flex;align-items:center}
+.hero-text{max-width:600px;padding:0 0 0 0}
+/* Eyebrow above the headline */
+.hero-eyebrow{font-family:var(--serif-en);font-size:13px;letter-spacing:5px;font-weight:500;color:rgba(255,255,255,.92);margin-bottom:30px}
+/* Three-line headline: white on line 1, gold italic on lines 2-3 */
+.hero-title{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-1.5px;margin:0 0 30px;color:#fff}
+.hero-title .line{display:block}
+.hero-title .line.light{color:#fff;font-weight:600}
+.hero-title .line.hl{color:var(--gold);font-style:italic;font-weight:500}
+
+.hero-title{font-size:clamp(48px,7.5vw,108px)}
+
+.hero-sub{font-family:var(--sans);font-size:clamp(15px,1.35vw,17px);line-height:1.85;color:rgba(255,255,255,.88);max-width:440px;margin:0 0 38px;font-weight:300}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn-gold{background:var(--gold);color:var(--ink);padding:14px 28px;border-radius:0;font-size:14px;font-weight:600;letter-spacing:.3px;display:inline-flex;align-items:center;gap:10px;transition:all .25s;font-family:var(--sans)}
+.btn-gold:hover{background:#e3b667;color:var(--ink);transform:translateY(-1px)}
+.btn-gold .arr{font-size:16px;font-weight:700}
+.btn-ghost-dark{color:#fff;border:1px solid rgba(255,255,255,.55);background:transparent;padding:14px 28px;border-radius:0;font-size:14px;font-weight:500;letter-spacing:.3px;display:inline-flex;align-items:center;gap:10px;transition:all .25s;font-family:var(--sans)}
+.btn-ghost-dark:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.btn-ghost-dark .arr{font-size:16px}
+
+.hero-corner{position:absolute;right:60px;bottom:60px;z-index:4;text-align:right;color:rgba(255,255,255,.92);pointer-events:none}
+.hero-corner .hc-line{font-family:var(--serif-en);font-size:14px;letter-spacing:5.5px;font-weight:500}
+.hero-corner .hc-italic{font-family:var(--serif-en);font-style:italic;font-size:26px;margin-top:2px;font-weight:400}
+
+.hero-scroll{position:absolute;left:60px;bottom:50px;z-index:4;display:flex;align-items:center;gap:18px;font-size:11.5px;letter-spacing:3.5px;color:rgba(255,255,255,.85);font-weight:500;font-family:var(--serif-en);pointer-events:none}
+.hero-scroll .line{width:90px;height:1px;background:rgba(255,255,255,.5);display:block}
+
+@media (max-width:980px){
+  .hero-plate{width:60%;right:-10%;opacity:.6}
+  .hero-inner{padding:0 24px}
+  .hero-corner{right:30px;bottom:30px}
+  .hero-scroll{left:30px;bottom:30px}
+}
+@media (max-width:680px){
+  .hero-plate{display:none}
+  .hero-text{max-width:100%}
+}
+
+/* ════════ WELCOME ════════ */
+.welcome{padding:120px 0;background:var(--cream)}
+.welcome-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;min-width:0}
+.welcome-media{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px rgba(20,12,4,.18);min-width:0}
+.welcome-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform 8s ease}
+.welcome-media:hover img{transform:scale(1.04)}
+.welcome-copy{min-width:0}
+.eyebrow{font-family:var(--serif-en);font-size:12px;letter-spacing:3.8px;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:22px;display:inline-block}
+.eyebrow.light{color:var(--gold)}
+.eyebrow.left{text-align:left}
+.sec-title{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.6vw,62px);line-height:1.1;letter-spacing:-1px;margin:0 0 28px;color:var(--ink)}
+.sec-title.light{color:var(--cream-2)}
+.sec-title.cream{color:var(--cream-2)}
+.sec-title.right{text-align:right}
+.welcome-copy p{color:var(--ink-soft);font-size:16.5px;line-height:1.85;margin:0 0 18px}
+.link-arrow{display:inline-flex;align-items:center;gap:10px;color:var(--clay);font-weight:500;font-size:15px;letter-spacing:.3px;margin-top:18px;transition:gap .25s}
+.link-arrow span{font-size:18px;transition:transform .25s}
+.link-arrow:hover{color:var(--clay-dark);gap:14px}
+
+@media (max-width:980px){
+  .welcome-grid{grid-template-columns:1fr;gap:50px}
+}
+
+/* ════════ SIGNATURES (DARK GREEN) ════════ */
+.signatures{padding:120px 0;background:var(--green-deep);color:var(--cream-2)}
+.sec-head{margin-bottom:60px}
+.sec-head.center{text-align:center}
+.sec-head .sec-sub{color:rgba(245,237,220,.7);font-size:16px;line-height:1.7;max-width:620px;margin:18px auto 0}
+.sig-grid{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:60px}
+.sig-card{position:relative;border-radius:4px;overflow:hidden;background:#152019;aspect-ratio:3/4;display:block;transition:transform .35s ease;cursor:pointer;flex:1 1 calc(33.333% - 16px);min-width:280px}
+.sig-card:hover{transform:translateY(-6px)}
+.sig-img{position:absolute;inset:0;overflow:hidden}
+.sig-img img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+.sig-card:hover .sig-img img{transform:scale(1.08)}
+.sig-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.85) 100%);z-index:1}
+.sig-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 26px 26px}
+.sig-tag{font-family:var(--serif-en);font-size:11px;letter-spacing:3.5px;color:var(--gold);font-weight:600;margin-bottom:10px}
+.sig-title{font-family:var(--serif);font-weight:500;font-size:30px;color:#fff;margin:0 0 10px;line-height:1.1;letter-spacing:-.5px}
+.sig-desc{font-size:14px;color:rgba(255,255,255,.72);margin:0;line-height:1.55;max-width:90%}
+.sig-cta{text-align:center}
+.btn-outline-cream{display:inline-flex;align-items:center;gap:10px;color:var(--cream-2);border:1px solid rgba(245,237,220,.4);padding:14px 30px;border-radius:0;font-size:14px;letter-spacing:.3px;font-weight:500;transition:all .25s;background:transparent}
+.btn-outline-cream:hover{background:var(--cream-2);color:var(--green-deep);border-color:var(--cream-2)}
+.btn-outline-cream .arr{font-size:16px}
+
+@media (max-width:880px){.sig-card{flex-basis:100%}}
+
+/* ════════ EVENTS (CREAM) ════════ */
+.events{padding:120px 0;background:var(--cream-2)}
+.events-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center;min-width:0}
+.events-copy{position:relative}
+.events-copy p{color:var(--ink-soft);font-size:16.5px;line-height:1.85;margin:0 0 18px;max-width:480px}
+.event-badge{position:absolute;left:0;bottom:-100px;background:var(--clay);color:#fff;padding:24px 28px;display:flex;gap:18px;align-items:center;box-shadow:0 24px 48px rgba(0,0,0,.18);max-width:300px}
+.eb-num{font-family:var(--serif-en);font-size:46px;font-weight:500;line-height:1;color:rgba(255,255,255,.95)}
+.eb-title{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.2;margin-bottom:6px}
+.eb-sub{font-family:var(--serif-en);font-size:11px;letter-spacing:1.4px;color:rgba(255,255,255,.78);font-weight:500}
+.events-media{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px rgba(20,12,4,.2)}
+.events-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+
+@media (max-width:980px){
+  .events-grid{grid-template-columns:1fr;gap:50px}
+  .event-badge{position:static;margin-top:30px}
+}
+
+/* ════════ A TASTE OF TERRACOTTA ════════ */
+.taste{padding:120px 0 0;background:var(--cream)}
+.taste-head{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:60px;margin-bottom:50px;min-width:0}
+.taste-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding-bottom:120px}
+.t-item{position:relative;overflow:hidden;border-radius:4px;aspect-ratio:3/4;display:block;background:#eee}
+.t-item img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
+.t-item:hover img{transform:scale(1.06)}
+
+@media (max-width:980px){
+  .taste-head{grid-template-columns:1fr;gap:14px}
+  .taste-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ════════ RESERVATION (DARK GREEN) ════════ */
+.reserve{background:var(--green-deep);color:var(--cream-2);overflow:hidden}
+.reserve-grid{display:grid;grid-template-columns:1fr 1fr;min-height:600px;min-width:0}
+.reserve-media{position:relative;min-height:480px;overflow:hidden}
+.reserve-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.reserve-copy{padding:110px 60px;display:flex;flex-direction:column;justify-content:center;max-width:640px}
+.reserve-copy p{color:rgba(245,237,220,.78);font-size:16.5px;line-height:1.85;margin:0 0 36px;max-width:520px}
+.reserve .btn-gold{align-self:flex-start}
+
+@media (max-width:980px){
+  .reserve-grid{grid-template-columns:1fr;min-height:auto}
+  .reserve-media{height:340px;min-height:0}
+  .reserve-copy{padding:60px 28px}
+}
+
+/* ════════ FOOTER ════════ */
+footer{background:var(--green-deep);color:var(--cream-2);padding:60px 0 0;border-top:1px solid rgba(245,237,220,.08)}
+.foot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:30px;padding-bottom:50px}
+.foot-brand{display:flex;align-items:center;gap:14px}
+.foot-tag{text-align:center;font-family:var(--serif);font-size:20px;font-weight:500}
+.foot-tag em{color:var(--gold);font-style:italic}
+.foot-fb{justify-self:end;color:var(--clay);font-size:15px;font-weight:500;letter-spacing:.3px;display:inline-flex;align-items:center;gap:8px}
+.foot-fb span{font-size:17px}
+.foot-fb:hover{color:var(--clay-light)}
+.foot-bottom{border-top:1px solid rgba(245,237,220,.1);padding:22px 0}
+.foot-bottom span{font-size:12.5px;letter-spacing:.5px;color:rgba(245,237,220,.55)}
+
+@media (max-width:780px){
+  .foot-grid{grid-template-columns:1fr;text-align:center;gap:18px}
+  .foot-brand{justify-content:center}
+  .foot-fb{justify-self:center}
+}
