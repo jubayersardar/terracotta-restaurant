@@ -1,67 +1,24 @@
-// ===== MOBILE MENU TOGGLE =====
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
+const menuButton = document.getElementById('mobileMenuBtn');
 
-if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-  });
-}
+menuButton?.addEventListener('click', () => {
+  const nav = document.getElementById('navLinks');
+  if (!nav) return;
+  const open = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+});
 
-// Close menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    mobileMenuBtn.classList.remove('active');
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    document.getElementById('navLinks')?.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// ===== SMOOTH SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-// ===== HEADER SCROLL EFFECT =====
-const header = document.querySelector('.header');
-let lastScroll = 0;
-
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-  
-  if (currentScroll > 50) {
-    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
-  } else {
-    header.style.boxShadow = 'none';
-  }
-  
-  lastScroll = currentScroll;
-});
-
-// ===== SCROLL ANIMATIONS =====
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// Observe all animatable elements
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.animate-fade-up, .animate-fade-in, .gallery-item, .sig-card').forEach(el => {
-    observer.observe(el);
-  });
-});
+  header?.classList.toggle('scrolled', window.scrollY > 30);
+}, { passive: true });
