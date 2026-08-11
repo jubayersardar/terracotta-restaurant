@@ -4,32 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terracotta Restaurant · Faridpur</title>
-  <meta name="description" content="Terracotta Restaurant — Faridpur-এর স্মরণীয় স্বাদ ও আতিথেয়তার ঠিকানা।">
+  <meta name="description" content="Terracotta Restaurant, Faridpur — স্মরণীয় খাবার, পারিবারিক মুহূর্ত এবং উদযাপনের ঠিকানা।">
   <link rel="icon" type="image/jpeg" href="assets/logo-restaurant.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+Bengali:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="announcement-bar">
-    ফরিদপুরে অসাধারণ ডাইনিং অভিজ্ঞতার জন্য স্বাগতম
-    <a href="reservation.html">টেবিল বুক করুন</a>
-  </div>
-
+  <div class="announcement-bar">ফরিদপুরে অসাধারণ ডাইনিং অভিজ্ঞতার জন্য স্বাগতম <a href="reservation.html">টেবিল বুক করুন</a></div>
   <header class="site-header" id="header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Terracotta Restaurant home">
-        <img src="assets/logo-restaurant.jpg" alt="Terracotta Restaurant logo">
-        <span class="brand-copy"><strong>TERRACOTTA</strong><small>RESTAURANT · FARIDPUR</small></span>
-      </a>
+      <a class="brand" href="index.html" aria-label="Terracotta Restaurant home"><img src="assets/logo-restaurant.jpg" alt="Terracotta Restaurant logo"><span class="brand-copy"><strong>TERRACOTTA</strong><small>RESTAURANT · FARIDPUR</small></span></a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="মেনু খুলুন" aria-expanded="false"><i></i><i></i><i></i></button>
       <nav class="main-nav" id="navLinks" aria-label="প্রধান নেভিগেশন">
-        <a href="about.html">আমাদের গল্প</a>
-        <a href="menu.html">মেনু</a>
-        <a href="experience.html">অভিজ্ঞতা</a>
-        <a href="gallery.html">গ্যালারি</a>
-        <a class="nav-cta" href="reservation.html">রিজার্ভেশন</a>
+        <a class="active" href="index.html">হোম</a><a href="about.html">আমাদের গল্প</a><a href="menu.html">মেনু</a><a href="experience.html">অভিজ্ঞতা</a><a href="gallery.html">গ্যালারি</a><a href="contact.html">যোগাযোগ</a><a class="nav-cta" href="reservation.html">রিজার্ভেশন</a>
       </nav>
     </div>
   </header>
@@ -38,29 +24,43 @@
     <section class="hero" id="home">
       <img class="hero-image" src="assets/hero.jpg" alt="Terracotta-এর স্বাক্ষর খাবার">
       <div class="hero-shade"></div>
-      <div class="hero-inner page-width">
-        <div class="hero-copy">
-          <p class="eyebrow gold">FARIDPUR · BANGLADESH</p>
-          <h1>স্বাদের শিল্প,<br><em>স্মৃতির মতো<br>সুন্দর</em></h1>
-          <p class="hero-lead">পরিশীলিত পরিবেশ, যত্নে তৈরি খাবার এবং প্রাণবন্ত আতিথেয়তার এক অনন্য ঠিকানা।</p>
-          <div class="hero-actions">
-            <a class="button button-gold" href="reservation.html">টেবিল বুক করুন <span>↗</span></a>
-            <a class="text-link light" href="menu.html">মেনু দেখুন <span>↓</span></a>
-          </div>
-        </div>
-      </div>
-      <div class="hero-bottom page-width">
-        <span class="scroll-note">SCROLL TO DISCOVER <i></i></span>
-        <span class="hero-watermark"><b>TERRACOTTA</b><em>Restaurant</em></span>
+      <div class="hero-inner page-width"><div class="hero-copy">
+        <p class="eyebrow gold">FARIDPUR · BANGLADESH</p>
+        <h1>স্বাদের শিল্প,<br><em>স্মৃতির মতো<br>সুন্দর</em></h1>
+        <p class="hero-lead">পরিশীলিত পরিবেশে যত্নে তৈরি খাবার ও আন্তরিক আতিথেয়তা।</p>
+        <div class="hero-actions"><a class="button button-gold" href="reservation.html">টেবিল বুক করুন <span>↗</span></a><a class="text-link light" href="#discover">আমাদের গল্প <span>↓</span></a></div>
+      </div></div>
+      <div class="hero-bottom page-width"><span class="scroll-note">SCROLL TO DISCOVER <i></i></span><span class="hero-watermark"><b>TERRACOTTA</b><em>Restaurant</em></span></div>
+    </section>
+
+    <section class="home-intro page-section-light" id="discover">
+      <div class="content-width split-intro">
+        <div class="intro-photo"><img src="assets/food-fried-rice.jpg" alt="Terracotta-এর পরিবেশিত খাবার"></div>
+        <div class="intro-copy"><p class="eyebrow terracotta">WELCOME TO TERRACOTTA</p><h2>প্রতিটি আয়োজনে<br>হোক <em>বিশেষ</em></h2><p>Terracotta Restaurant হলো পরিবার, বন্ধু ও প্রিয়জনদের নিয়ে সুন্দর সময় কাটানোর একটি উষ্ণ আয়োজন। ক্লাসিক স্বাদের প্রতি সম্মান রেখে, আধুনিক পরিবেশনায় আমরা তৈরি করি প্রতিটি স্মরণীয় মুহূর্ত।</p><p>দ্রুত দুপুরের লাঞ্চ থেকে উদযাপনের ডিনার—আমাদের দরজা সবসময় খোলা আপনার পরবর্তী সুন্দর অভিজ্ঞতার জন্য।</p><a class="text-link terracotta-link" href="about.html">আমাদের গল্প জানুন <span>→</span></a></div>
       </div>
     </section>
 
-    <!-- Home intentionally stays focused: the other sections now live on their own pages. -->
+    <section class="home-menu-highlight">
+      <div class="content-width"><div class="section-title-row"><div><p class="eyebrow gold">FROM OUR KITCHEN</p><h2>ভালোবাসায় তৈরি<br><em>পছন্দের স্বাদ</em></h2></div><a class="button button-outline" href="menu.html">পুরো মেনু দেখুন <span>↗</span></a></div>
+        <div class="featured-dishes">
+          <article><img src="assets/sig-pasta.jpg" alt="Mexican Hot Chicken Pizza"><div><span>POPULAR PICK</span><h3>Mexican Hot Chicken Pizza</h3><p>চিজ, চিকেন, টমেটো, ক্যাপসিকাম ও হট চিলির মশলাদার সমন্বয়।</p><strong>৳ ৭৪০ থেকে</strong></div></article>
+          <article><img src="assets/food-fried-rice.jpg" alt="Terracotta Special Fried Rice"><div><span>SIGNATURE</span><h3>Terracotta Special Fried Rice</h3><p>প্রন, ডিম, সবজি ও থাই হার্বে তৈরি সুগন্ধি ফ্রাইড রাইস।</p><strong>৳ ৬৩৮</strong></div></article>
+          <article><img src="assets/sig-samosa-real.jpg" alt="Thai Fried Chicken"><div><span>CHEF'S CHOICE</span><h3>Thai Fried Chicken</h3><p>থাই স্পাইসে মেরিনেট করা ক্রিসপি চিকেন—শেয়ার করার জন্য আদর্শ।</p><strong>৳ ৪৮৯</strong></div></article>
+        </div>
+        <p class="menu-source-note">Foodpanda-তে প্রকাশিত মূল্য থেকে নেওয়া; অর্ডারের সময় মূল্য ও প্রাপ্যতা পরিবর্তিত হতে পারে।</p>
+      </div>
+    </section>
+
+    <section class="home-occasions page-section-light"><div class="content-width occasions-grid"><div class="occasion-copy"><p class="eyebrow terracotta">MORE THAN A MEAL</p><h2>আপনজনের জন্য<br><em>একটি সুন্দর মুহূর্ত</em></h2><p>ইন্টিমেট ডিনার, পারিবারিক মিলনমেলা কিংবা বিশেষ উদযাপন—Terracotta-তে আপনার প্রতিটি আয়োজন পায় মনোযোগী আতিথেয়তা।</p><a class="text-link terracotta-link" href="experience.html">অভিজ্ঞতাগুলো দেখুন <span>→</span></a></div><div class="occasion-photo"><img src="assets/event-board.jpg" alt="বিশেষ ডাইনিং আয়োজন"><div class="occasion-badge"><b>01</b><strong>উষ্ণ পরিবেশ</strong><small>Thoughtful dining, every day</small></div></div></div></section>
+
+    <section class="home-gallery"><div class="content-width"><div class="gallery-heading-home"><div><p class="eyebrow terracotta">A TASTE OF TERRACOTTA</p><h2>স্বাদের আগে<br><em>চোখের আনন্দ</em></h2></div><a class="text-link terracotta-link" href="gallery.html">সব ছবি দেখুন <span>→</span></a></div><div class="home-gallery-grid"><img src="assets/gallery-fine-dining.jpg" alt="Terracotta dining"><img src="assets/gallery-interior.jpg" alt="Terracotta interior"><img src="assets/gallery-outdoor.jpg" alt="Terracotta seating"><img src="assets/gallery-daylight.jpg" alt="Terracotta table setting"></div></div></section>
+
+    <section class="home-visit" id="visit"><div class="visit-photo"><img src="assets/banquet-hall.jpg" alt="Terracotta-এর আয়োজনের স্থান"></div><div class="visit-copy"><p class="eyebrow gold">MAKE A RESERVATION</p><h2>আপনার টেবিলটি<br><em>অপেক্ষায় আছে</em></h2><p>দৈনন্দিন ডাইনিং, পরিবারের আয়োজন বা বিশেষ উপলক্ষ—আপনার সময়টি আগেই নিশ্চিত করুন।</p><div class="visit-actions"><a class="button button-gold" href="reservation.html">সিট বুক করুন <span>↗</span></a><a class="text-link light" href="contact.html">ঠিকানা ও যোগাযোগ <span>→</span></a></div></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner"><a class="brand" href="index.html"><img src="assets/logo-restaurant.jpg" alt="Terracotta logo"><span class="brand-copy"><strong>TERRACOTTA</strong><small>RESTAURANT · FARIDPUR</small></span></a><p>একসাথে সুন্দর সময়ের জন্য!</p><a class="footer-link" href="https://www.facebook.com/profile.php?id=100063638885169" target="_blank" rel="noopener">Facebook ↗</a></div>
-    <div class="footer-bottom"><span>© 2026 Terracotta Restaurant. All rights reserved.</span></div>
+  <footer class="site-footer site-footer-rich">
+    <div class="footer-grid content-width"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/logo-restaurant.jpg" alt="Terracotta logo"><span class="brand-copy"><strong>TERRACOTTA</strong><small>RESTAURANT · FARIDPUR</small></span></a><p>একসাথে সুন্দর সময়ের জন্য—ফরিদপুরের খাবার ও আতিথেয়তার একটি প্রিয় ঠিকানা।</p></div><div><h3>দ্রুত লিংক</h3><a href="index.html">হোম</a><a href="about.html">আমাদের গল্প</a><a href="menu.html">মেনু</a><a href="gallery.html">গ্যালারি</a></div><div><h3>যোগাযোগ</h3><a href="tel:+8801732448855">০১৭৩২-৪৪৮৮৫৫</a><a href="mailto:terracottafaridpur@gmail.com">terracottafaridpur@gmail.com</a><a href="https://www.facebook.com/profile.php?id=100063638885169" target="_blank" rel="noopener">Facebook ↗</a></div><div><h3>আমাদের অবস্থান</h3><p>100, Jhiltuly, Ambika Road<br>Opposite to Washith Tower<br>Faridpur, Bangladesh</p><a href="https://maps.app.goo.gl/ciB4F9gbJDZogEp39?g_st=ic" target="_blank" rel="noopener">Google Maps-এ দেখুন ↗</a></div></div>
+    <div class="footer-bottom content-width"><span>© <span class="current-year">2026</span> Terracotta Restaurant. All rights reserved.</span><span>Website information sourced from Terracotta’s published Foodpanda and Facebook pages.</span></div>
   </footer>
   <script src="js/main.js"></script>
 </body>

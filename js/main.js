@@ -22,3 +22,19 @@ const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header?.classList.toggle('scrolled', window.scrollY > 30);
 }, { passive: true });
+
+document.querySelectorAll('.current-year').forEach((year) => {
+  year.textContent = String(new Date().getFullYear());
+});
+
+const bookingForm = document.getElementById('bookingForm');
+bookingForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const status = document.getElementById('formStatus');
+  if (!bookingForm.checkValidity()) {
+    bookingForm.reportValidity();
+    return;
+  }
+  status.textContent = 'তথ্যগুলো যাচাই করা হয়েছে। বুকিং নিশ্চিত করতে এখন ০১৭৩২-৪৪৮৮৫৫ নম্বরে কল করুন অথবা Facebook-এ মেসেজ দিন।';
+  bookingForm.reset();
+});
